@@ -1,13 +1,17 @@
-[Hamster](http://projecthamster.wordpress.com/) makes it so easy to keep track of your time throughout the course of the day.
+[Hamster](http://projecthamster.wordpress.com/) makes it very easy to keep track of your time throughout the course of the day.
 However, getting that data into other systems can be a pain in the ass, which is why I created this little library to help automate
 the process of submiting Hamster time entries in to [PivotalTracker](https://www.pivotaltracker.com/).
 
 Unfortunately, the current official PivotalTracker API doesn't give you access to time tracking methods, so I've created a bit of a workaround
-using curl.  So make sure you have curl installed before trying to use this.
+using curl.  
 
-    sudo apt-get install curl
+This library requires curl, and ruby 1.9.2.
 
-You'll also need Ruby to get this working.  I've only tested with ruby 1.9.2.
+    sudo apt-get install curl ruby1.9.1
+
+Then install the library
+
+    sudo gem install hamster-pivotal
 
 Setup
 =====
@@ -45,11 +49,11 @@ the report format list and save the file in the root of this project's directory
 
 Now you're actually ready to import.  You can run either of the two commands:
 
-    ./bin/show export.tsv
+    ./bin/hamster-pivotal dry-run export.tsv
 
 This will just verify that everything parses correctly and do a pretty print of your time entries.
 
-    ./bin/submit export.tsv
+    ./bin/hamster-pivotal submit export.tsv
 
 This will actually upload the time entries in export.tsv to PivotalTracker.
 
