@@ -1,4 +1,5 @@
-== Setup
+Setup
+=====
 
 First you will need to clone this repository to your local machine.
 
@@ -23,7 +24,8 @@ Once this is setup, just run the following command:
 
     source vars.txt
 
-== Usage
+Usage
+=====
 
 Once you've got your pivotal account configured, you will need to export your time entries from Hamster.
 You can do this from the "Show Overview" button.  Filter the entries that you want to import into Pivotal and
