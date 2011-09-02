@@ -1,7 +1,8 @@
-Entering time in multiple places is a pain in the ass.  I created this little script to help automate
-the process of submiting time entries in [Hamster](http://projecthamster.wordpress.com/) to [PivotalTracker](https://www.pivotaltracker.com/).
+[Hamster](http://projecthamster.wordpress.com/) makes it so easy to keep track of your time throughout the course of the day.
+However, getting that data into other systems can be a pain in the ass, which is why I created this little library to help automate
+the process of submiting Hamster time entries in to [PivotalTracker](https://www.pivotaltracker.com/).
 
-Unfortunately, the current official PivotalTracker API doesn't give you access to time tracking methods, so I've done a bit of a workaround
+Unfortunately, the current official PivotalTracker API doesn't give you access to time tracking methods, so I've created a bit of a workaround
 using curl.  So make sure you have curl installed before trying to use this.
 
     sudo apt-get install curl
