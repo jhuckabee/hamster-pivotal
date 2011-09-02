@@ -24,7 +24,7 @@ module Pivotal
 
     def post_form(data, path)
       login unless @logged_in
-      `curl -v -b #{COOKIE_FILE} -c #{COOKIE_FILE} -d '#{data}' #{HOST}/#{path}`
+      `curl -b #{COOKIE_FILE} -c #{COOKIE_FILE} -d '#{data}' #{HOST}/#{path}`
     end
   end
 end
