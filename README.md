@@ -52,3 +52,8 @@ This will just verify that everything parses correctly and do a pretty print of 
     ./bin/submit export.tsv
 
 This will actually upload the time entries in export.tsv to PivotalTracker.
+
+Note
+====
+
+Currently, pivotal only allows time increments of 30 minutes in their time tracking logs. Entries are adjusted accordinly.
