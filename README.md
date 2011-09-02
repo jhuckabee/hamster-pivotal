@@ -1,3 +1,13 @@
+Entering time in multiple places is a pain in the ass.  I created this little script to help automate
+the process of submiting time entries in [Hamster](http://projecthamster.wordpress.com/) to [PivotalTracker](https://www.pivotaltracker.com/).
+
+Unfortunately, the current official PivotalTracker API doesn't give you access to time tracking methods, so I've done a bit of a workaround
+using curl.  So make sure you have curl installed before trying to use this.
+
+    sudo apt-get install curl
+
+You'll also need Ruby to get this working.  I've only tested with ruby 1.9.2.
+
 Setup
 =====
 
