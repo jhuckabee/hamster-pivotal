@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib')))
+require 'pivotal'
+
+required_env_vars = [ 'PIVOTAL_EMAIL',
+                      'PIVOTAL_PASSWORD',
+                      'PIVOTAL_PERSON_ID',
+                      'PIVOTAL_PROJECT_ID' ]
+
+usage = <<-eos
+Import your Hamster time entries into pivotal tracker.
+
+    hamster-pivotal dry-run export.tsv
+
+Make sure your stories are read properly.
+
+    hamster-pivotal submit export.tsv
+
+Import time entries from export.tsv to PivotalTracker
+eos
+
+abort usage if ARGV.length < 2
+
+env_variables = "Please make sure the following environment variables are configured properly: #{required_env_vars.join(', ')}."
+abort env_variables if required_env_vars.any?{|x| ENV[x].nil?}
+
+case ARGV[0]
+  when 'dry-run'
+    Pivotal::Entry.dry_run(ARGV[1])
+  when 'submit'
+    Pivotal::Entry.upload_to_pivotal(ARGV[1])
+end
